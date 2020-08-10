@@ -1,16 +1,15 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import * as helmet from 'helmet';
-import * as csurf from 'csurf';
 import * as rateLimit from 'express-rate-limit';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: true });
-  // Use helmet 
-  app.use(helmet.default());
-  // Security for exploits
-  app.use(csurf());
-  // Rate Limit
+  const app = await NestFactory.create(AppModule);
+  app.enableCors({
+  "origin": "*",
+  "methods": "GET,HEAD,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+});
   app.use(
     rateLimit({
       windowMs: 15 * 60 * 1000, // 15 minutes

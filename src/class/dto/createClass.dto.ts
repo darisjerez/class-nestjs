@@ -12,7 +12,11 @@ export class CreateClassDto {
 
     @IsNotEmpty()
     @IsString()
-    simulationLink: string; 
+    simulationLink: string;
+
+    @IsNotEmpty()
+    @IsString()
+    simulationName: string; 
 
     @IsNotEmpty()
     @IsString()
@@ -24,6 +28,6 @@ export class CreateClassDto {
 
     @IsNotEmpty()
     @IsString()
-    creation: string; 
+    creation: string;
 
 }

@@ -11,6 +11,9 @@ export class Class extends Document {
     description: string;
 
     @Prop()
+    simulationName: string;
+    
+    @Prop()
     simulationLink: string;
 
     @Prop()
