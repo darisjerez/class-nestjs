@@ -5,7 +5,7 @@ import * as rateLimit from 'express-rate-limit';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-  "origin": "http://127.0.0.1:5500/",
+  "origin": "*",
   "methods": "GET,HEAD,POST,DELETE",
   "preflightContinue": false,
   "optionsSuccessStatus": 204
