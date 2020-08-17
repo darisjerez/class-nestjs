@@ -22,6 +22,11 @@ export class ClassController {
         return this.classService.saveClass(createClassDto);
     }
 
+    @Get('/:id')
+    findClassById(@Param('id') id:string): Promise<Class>{
+      return this.classService.findClassById(id);
+    }
+
     @Delete('/:id')
     deleteClass(@Param('id') id:string): Promise<any>{
         return this.classService.deleteClass(id);

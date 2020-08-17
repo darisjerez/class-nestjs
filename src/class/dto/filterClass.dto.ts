@@ -4,6 +4,6 @@ export class FilterClassDto {
 
     @IsString()
     @IsOptional()
-    @IsNotEmpty()
+    @IsNotEmpty({message: "Campo no puede estar vacio."})
     search: string;
 }

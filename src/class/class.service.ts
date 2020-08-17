@@ -22,10 +22,10 @@ export class ClassService {
             if (classes.filter(classFound => classFound.title.toLowerCase().includes(search.toLowerCase())).length > 0) {
                 return classes.filter(classFound => classFound.title.toLowerCase().includes(search.toLowerCase()));
             } else {
-                throw new NotFoundException(`Not Class found for: ${search}`);
+                throw new NotFoundException(`No Hay Resultados Para: ${search}`);
             }
         }
-        
+
         return classes;
     }
 
@@ -35,7 +35,7 @@ export class ClassService {
              throw new NotFoundException(`Class with ID: ${id} not found.`);
         }
         return classFound;
-    } 
+    }
 
     async deleteClass(id: string): Promise<any>{
         const classFound = await this.findClassById(id);
@@ -44,4 +44,3 @@ export class ClassService {
 
     }
 }
-
