@@ -16,11 +16,15 @@ export class CreateClassDto {
 
     @IsNotEmpty()
     @IsString()
-    simulationName: string; 
+    simulationName: string;
 
     @IsNotEmpty()
     @IsString()
     teacherName: string;
+
+    @IsNotEmpty()
+    @IsString()
+    teacherEmail: string;
 
     @IsNotEmpty()
     @IsString()

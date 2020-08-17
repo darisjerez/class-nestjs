@@ -12,7 +12,7 @@ export class Class extends Document {
 
     @Prop()
     simulationName: string;
-    
+
     @Prop()
     simulationLink: string;
 
@@ -24,6 +24,9 @@ export class Class extends Document {
 
     @Prop()
     creation: string;
+
+    @Prop()
+    teacherEmail: string;
 
 }
 
