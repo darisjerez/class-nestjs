@@ -16,7 +16,7 @@ export class ClassService {
     }
 
     async getAllClasses(filterClassDto: FilterClassDto): Promise<Class[]>{
-        const classes = await this.ClassModel.find().exec()
+        const classes = await await (await this.ClassModel.find().exec()).reverse();
         const { search } = filterClassDto;
         if (search) {
             if (classes.filter(classFound => classFound.title.toLowerCase().includes(search.toLowerCase())).length > 0) {
