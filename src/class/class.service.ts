@@ -16,11 +16,11 @@ export class ClassService {
     }
 
     async getAllClasses(filterClassDto: FilterClassDto): Promise<Class[]>{
-        const classes = await this.ClassModel.find().exec();
+        const classes = await this.ClassModel.find().exec()
         const { search } = filterClassDto;
         if (search) {
             if (classes.filter(classFound => classFound.title.toLowerCase().includes(search.toLowerCase())).length > 0) {
-                return classes.filter(classFound => classFound.title.toLowerCase().includes(search.toLowerCase()));
+                return classes.filter(classFound => classFound.title.toLowerCase().includes(search.toLowerCase())).reverse();
             } else {
                 throw new NotFoundException(`No Hay Resultados Para: ${search}`);
             }
